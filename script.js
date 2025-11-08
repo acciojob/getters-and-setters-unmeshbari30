@@ -1,9 +1,37 @@
 //complete this code
-class Person {}
+class Person {
+	constructor(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	getName(){
+		return this.name;
+	}
 
-class Student extends Person {}
+	setName(name){
+		this.name = name;
+	}
 
-class Teacher extends Person {}
+	getAge(){
+		return this.getAge;
+	}
+
+	setAge(age){
+		this.age = age
+	}
+}
+
+class Student extends Person {
+	study(){
+		return `${this.getName()} is studying`
+	}
+}
+
+class Teacher extends Person {
+	teach(){
+		return `${this.getName()} is teaching`
+	}
+}
 
 // Do not change the code below this line
 window.Person = Person;
