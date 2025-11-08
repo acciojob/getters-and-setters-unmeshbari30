@@ -13,7 +13,7 @@ class Person {
 	}
 
 	getAge(){
-		return this.getAge;
+		return this.age;
 	}
 
 	setAge(age){
@@ -22,16 +22,33 @@ class Person {
 }
 
 class Student extends Person {
+	constructor(name, age){
+		super(name, age)	
+	}
 	study(){
 		return `${this.getName()} is studying`
 	}
 }
 
 class Teacher extends Person {
+	constructor(name, age){
+		super(name, age)	
+	}
 	teach(){
 		return `${this.getName()} is teaching`
 	}
 }
+
+let p = new Person("John", 25);
+p.getName();
+p.setAge(30)
+
+
+let s = new Student("John", 30)
+s.study();
+
+let t = new Teacher("John", 30);
+t.teach()
 
 // Do not change the code below this line
 window.Person = Person;
