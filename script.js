@@ -1,54 +1,75 @@
 //complete this code
 class Person {
-	constructor(name,age){
-		this.name = name;
-		this.age = age;
-	}
-	getName(){
-		return this.name;
-	}
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
 
-	setName(name){
-		this.name = name;
-	}
+  // Getters
+  getName() {
+    return this._name;
+  }
 
-	getAge(){
-		return this.age;
-	}
+  getAge() {
+    return this._age;
+  }
 
-	setAge(age){
-		this.age = age
-	}
+  // Setters
+  setName(name) {
+    this._name = name;
+  }
+
+  setAge(age) {
+    this._age = age;
+  }
+
+  // For direct property access like student.name in tests
+  get name() {
+    return this._name;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set name(value) {
+    this._name = value;
+  }
+
+  set age(value) {
+    this._age = value;
+  }
 }
 
 class Student extends Person {
-	constructor(name, age){
-		super(name, age)	
-	}
-	study(){
-		return `${this.getName()} is studying`
-	}
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  study() {
+    console.log(`${this.name} is studying`);
+  }
 }
 
 class Teacher extends Person {
-	constructor(name, age){
-		super(name, age)	
-	}
-	teach(){
-		return `${this.getName()} is teaching`
-	}
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  teach() {
+    console.log(`${this.name} is teaching`);
+  }
 }
 
 let p = new Person("John", 25);
 p.getName();
-p.setAge(30)
+p.setAge(30);
 
-
-let s = new Student("John", 30)
+let s = new Student("John", 30);
 s.study();
 
 let t = new Teacher("John", 30);
-t.teach()
+t.teach();
 
 // Do not change the code below this line
 window.Person = Person;
